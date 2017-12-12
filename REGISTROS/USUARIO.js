@@ -6,20 +6,20 @@ $(document).ready(function(){
 
 
 function limpiar(){
-    document.getElementById("id").value = "";
-    document.getElementById("descripcion").value = "";
+    document.getElementById("apellidoUsuario").value = "";
+    document.getElementById("nombreUsuario").value = "";
 }
 
 function leerfiltrado(){
-    filtro = document.getElementById("descripcionBuscar").value;
-    urltorequest = urlWS +"genero/leer_filtrado";
+    filtro = document.getElementById("NombreBuscar").value;
+    urltorequest = urlWS +"nombreUsuario/leer_filtrado";
     $.ajax({
         type: "get",
-        url: urltorequest+"?columna=descripcion&tipo_filtro=contiene&filtro="+filtro,
+        url: urltorequest+"?columna=nombre&tipo_filtro=contiene&filtro="+filtro,
         async:true,
         success:  function (respuesta) {
            toshow = JSON.parse(respuesta);
-           cabeceraTabla = "<table class=\"table table-condensed\"><thead><tr><th>id</th><th>Descripcion</th></tr></thead><tbody>";
+           cabeceraTabla = "<table class=\"table table-condensed\"><thead><tr><th>id</th><th>Nombre</th></tr></thead><tbody>";
            pieTabla = "</tbody></table>";
            contenidoTabla = "";
            $(toshow).each(function(key,value){
@@ -32,9 +32,9 @@ function leerfiltrado(){
 
 function leer(id){
     if(id==0){
-        urltorequest = urlWS +"genero/leer";
+        urltorequest = urlWS +"nombreUsuario/leer";
     }else{
-        urltorequest = urlWS +"genero/leer?id="+id;
+        urltorequest = urlWS +"nombreUsuario/leer?id="+apellidoUsuario;
     }
     $.ajax({
         type: "get",
@@ -42,11 +42,11 @@ function leer(id){
         async:true,
         success:  function (respuesta) {
            toshow = JSON.parse(respuesta);
-           cabeceraTabla = "<table class=\"table table-condensed\"><thead><tr><th>id</th><th>Descripcion</th></tr></thead><tbody>";
+           cabeceraTabla = "<table class=\"table table-condensed\"><thead><tr><th>id</th><th>Nombre</th></tr></thead><tbody>";
            pieTabla = "</tbody></table>";
            contenidoTabla = "";
            $(toshow).each(function(key,value){
-                contenidoTabla=contenidoTabla+"<tr><td>"+value.id+"</td><td>"+value.descripcion+"</td></tr>";
+                contenidoTabla=contenidoTabla+"<tr><td>"+value.id+"</td><td>"+value.nombreUsuario+"</td></tr>";
            });
            document.getElementById("respuesta").innerHTML=cabeceraTabla+contenidoTabla+pieTabla;
         }
@@ -56,7 +56,7 @@ function leer(id){
 
 function borrar(){
     id = document.getElementById("id").value;
-    urltorequest = urlWS +"genero/borrar?id="+id;
+    urltorequest = urlWS +"nombreUsuario/borrar?id="+id;
     $.ajax({
         type: "get",
         url: urltorequest,
@@ -75,7 +75,7 @@ function borrar(){
 function crear(){
     id = document.getElementById("id").value;
     descripcion = document.getElementById("descripcion").value;
-    urltorequest = urlWS +"genero/crear";
+    urltorequest = urlWS +"nombreUsuario/crear";
     $.ajax({
         type: "post",
         url: urltorequest,
@@ -95,7 +95,7 @@ function crear(){
 function actualizar(){
     id = document.getElementById("id").value;
     descripcion = document.getElementById("descripcion").value;
-    urltorequest = urlWS +"genero/actualizar";
+    urltorequest = urlWS +"nombreUsuario/actualizar";
     $.ajax({
         type: "post",
         url: urltorequest,
