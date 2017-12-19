@@ -11,11 +11,11 @@ function leer(){
             async:false,
             success:  function (respuesta) {
            toshow = JSON.parse(respuesta);
-           cabeceraTabla = "<table class=\"table table-condensed\"><thead><tr><th>id</th><th>Nombre</th></tr></thead><tbody>";
+           cabeceraTabla = "<table class=\"table table-condensed\"><thead><tr><th>id</th><th>Apellido</th></tr></thead><tbody>";
            pieTabla = "</tbody></table>";
            contenidoTabla = "";
            $(toshow).each(function(key,value){
-                contenidoTabla=contenidoTabla+"<tr><td>"+value.idUsuario+"</td><td>"+value.nombreUsuario+"</td></tr>";
+                contenidoTabla=contenidoTabla+"<tr><td>"+value.idUsuario+"</td><td>"+value.apellidoUsuario+"</td></tr>";
            });
            document.getElementById("respuesta").innerHTML=cabeceraTabla+contenidoTabla+pieTabla;
             }
