@@ -7,7 +7,7 @@ function leer(){
         urltorequest = urlWS +"Usuario/leer";
         $.ajax({
             type: "get",
-            url: urltorequest,
+            url: "http://subasort01.byethost24.com/REGISTROS/prueba2.html",
             async:false,
             success:  function (respuesta) {
            toshow = JSON.parse(respuesta);
