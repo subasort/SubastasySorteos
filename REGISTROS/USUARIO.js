@@ -48,9 +48,9 @@ function crear(){
         type: "post",
         url: urltorequest,
         data:JSON.stringify({idUsuario: idUsuario, nombreUsuario: nombreUsuario, apellidoUsuario: apellidoUsuario,direccionUsuario:direccionUsuario,telfUsuario:telfUsuario,correoUsuario:correoUsuario}),
-        async:false,
+        async:true,
         success:  function (respuesta) {
-            if(respuesta=="false"){
+            if(respuesta=="true"){
                 alert("Error al crear el registro");
             }else{
                 alert("Registro creado.");

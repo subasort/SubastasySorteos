@@ -4,19 +4,23 @@
 <head>
     <meta charset="utf-8" />
     <meta name="christian" content="SUBASTAS Y SORTEOS">
-    <title>USO WS</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> +
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> +
+    <title>CRUD REGISTRO</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="prueba2.js"></script>
 </head>
 
 <body>
+<picture>
+    <source media="(min-width: )" srcset="subasort.png">
+    <img src="http://subasort01.byethost24.com/imagen/subasort.png"  width="200">
+</picture>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <h3 class="text-center text-primary">
-                    OBTENER DATOS DEL WEB SERVICE
+                    REGISTRO Y LISTA DE USUARIOS  
                 </h3>
             </div>
         </div>
@@ -24,16 +28,16 @@
             <div class="col-md-12">
                 <div class="btn-group btn-group-sm">
                     <button type="button" class="btn btn-info" onclick="leer()">
-                        <span class="glyphicon glyphicon-refresh"></span>&nbsp;LEER
+                        <span class="glyphicon glyphicon-refresh"></span>&nbsp;Lista-Registros
                     </button>
                     <button type="button" class="btn btn-success" onclick="crear()">
-                        <span class="glyphicon glyphicon-plus"></span>&nbsp;CREAR
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp;Guardar-Registro
                     </button>
                     <button type="button" class="btn btn-warning" onclick="actualizar()">
                         <span class="glyphicon glyphicon-ok"></span>&nbsp;ACTUALIZAR
                     </button>
                     <button type="button" class="btn btn-danger" onclick="borrar()">
-                        <span class="glyphicon glyphicon-minus"></span>&nbsp;BORRAR
+                        <span class="glyphicon glyphicon-trash"></span>&nbsp;BORRAR
                     </button>
                 </div>
             </div>
@@ -78,7 +82,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div id="respuesta">
-                    Datos Obtenidos
+                   lista de registrados
                 </div>
             </div>
         </div>
