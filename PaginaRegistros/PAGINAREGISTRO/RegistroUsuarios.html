@@ -17,15 +17,22 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
         crossorigin="anonymous">
-
+    <style>
+       body  {
+        /* background-image: url("https://i0.wp.com/criptotendencia.com/wp-content/uploads/2017/09/Subastas-Online.jpg?fit=618%2C426&ssl=1"); */
+        background-color: #161414;
+        background-image: url("sorteo.png");
+    }
+    </style>
 </head>
 
 <body>
     <picture>
         <source media="(min-width: )" srcset="subasort.png">
-        <img src="http://subasort01.byethost24.com/imagen/subasort.png" width="200">
+        <img src="subasort.png" width="200">
     </picture>
-    <div class="container-fluid">
+    <div class="container-fluid-12">
+
         <div class="row">
             <div class="col-md-12">
                 <h3 class="text-center text-primary">
@@ -33,27 +40,28 @@
                 </h3>
             </div>
         </div>
-        <center>
-            <div class="row">
-                <div class="col-center-6">
+        </br>
+        </br>
+        <div class="row">
+            <div class="col-md-5 col-md-offset-5">
 
-                    <div class="btn-group btn-group-sm">
-                        <button type="button" class="btn btn-info" onclick="leer()">
-                            <span class="glyphicon glyphicon-refresh"></span>&nbsp;Lista-Registro
-                        </button>
-                        <button type="button" class="btn btn-success" onclick="crear()">
-                            <span class="glyphicon glyphicon-plus"></span>&nbsp;CREAR
-                        </button>
-                        <button type="button" class="btn btn-warning" onclick="actualizar()">
-                            <span class="glyphicon glyphicon-ok"></span>&nbsp;ACTUALIZAR
-                        </button>
-                        <button type="button" class="btn btn-danger" onclick="borrar()">
-                            <span class="glyphicon glyphicon-trash"></span>&nbsp;BORRAR
-                        </button>
-                    </div>
+                <div class="btn-group- btn-group-sm">
+                    <button type="button" class="btn btn-info" onclick="leer()">
+                        <span class="glyphicon glyphicon-refresh"></span>&nbsp;Lista-Registro
+                    </button>
+                    <button type="button" class="btn btn-success" onclick="crear()">
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp;CREAR
+                    </button>
+                    <button type="button" class="btn btn-warning" onclick="actualizar()">
+                        <span class="glyphicon glyphicon-ok"></span>&nbsp;ACTUALIZAR
+                    </button>
+                    <button type="button" class="btn btn-danger" onclick="borrar()">
+                        <span class="glyphicon glyphicon-trash"></span>&nbsp;BORRAR
+                    </button>
                 </div>
             </div>
-        </center>
+        </div>
+
         <div class="row">
             <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
             </div>
