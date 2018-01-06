@@ -1,7 +1,7 @@
 var urlWS = "";
 $(document).ready(function(){
    urlWS = "http://subasort01.byethost24.com/server/";
-   leer(0);
+  
 });
 
 function limpiar(){
@@ -48,9 +48,9 @@ function crear(){
         type: "post",
         url: urltorequest,
         data:JSON.stringify({idUsuario: idUsuario, nombreUsuario: nombreUsuario, apellidoUsuario: apellidoUsuario,direccionUsuario:direccionUsuario,telfUsuario:telfUsuario,correoUsuario:correoUsuario}),
-        async:true,
+        async:false,
         success:  function (respuesta) {
-            if(respuesta=="true"){
+            if(respuesta=="false"){
                 alert("Error al crear el registro");
             }else{
                 alert("Registro creado.");
