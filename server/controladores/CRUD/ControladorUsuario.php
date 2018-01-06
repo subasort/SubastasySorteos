@@ -17,8 +17,8 @@ class ControladorUsuario extends ControladorBase
 
    function actualizar(Usuario $usuario)
    {
-      $parametros = array($usuario->idUsuario,$usuario->ciUsuario,$usuario->nombreUsuario,$usuario->apellidoUsuario,$usuario->direccionUsuario,$usuario->telfUsuario,$usuario->correoUsuario,$usuario->id);
-      $sql = "UPDATE Usuario SET idUsuario = ?,ciUsuario = ?,nombreUsuario = ?,apellidoUsuario = ?,direccionUsuario = ?,telfUsuario = ?,correoUsuario = ? WHERE id = ?;";
+      $parametros = array($usuario->idUsuario,$usuario->ciUsuario,$usuario->nombreUsuario,$usuario->apellidoUsuario,$usuario->direccionUsuario,$usuario->telfUsuario,$usuario->correoUsuario,$usuario->idUsuario);
+      $sql = "UPDATE Usuario SET idUsuario = ?,ciUsuario = ?,nombreUsuario = ?,apellidoUsuario = ?,direccionUsuario = ?,telfUsuario = ?,correoUsuario = ? WHERE idUsuario = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
          return true;
@@ -30,7 +30,7 @@ class ControladorUsuario extends ControladorBase
    function borrar(int $id)
    {
       $parametros = array($id);
-      $sql = "DELETE FROM Usuario WHERE id = ?;";
+      $sql = "DELETE FROM Usuario WHERE idUsuario = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
          return true;
@@ -45,7 +45,7 @@ class ControladorUsuario extends ControladorBase
          $sql = "SELECT * FROM Usuario;";
       }else{
       $parametros = array($id);
-         $sql = "SELECT * FROM Usuario WHERE id = ?;";
+         $sql = "SELECT * FROM Usuario WHERE idUsuario = ?;";
       }
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       return $respuesta;
