@@ -18,7 +18,7 @@ class ControladorInscSubasta extends ControladorBase
    function actualizar(InscSubasta $inscsubasta)
    {
       $parametros = array($inscsubasta->idInscSub,$inscsubasta->idSubasta,$inscsubasta->idUsuario,$inscsubasta->id);
-      $sql = "UPDATE InscSubasta SET idInscSub = ?,idSubasta = ?,idUsuario = ? WHERE id = ?;";
+      $sql = "UPDATE InscSubasta SET idInscSub = ?,idSubasta = ?,idUsuario = ? WHERE idInscSub = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
          return true;
@@ -30,7 +30,7 @@ class ControladorInscSubasta extends ControladorBase
    function borrar(int $id)
    {
       $parametros = array($id);
-      $sql = "DELETE FROM InscSubasta WHERE id = ?;";
+      $sql = "DELETE FROM InscSubasta WHERE idInscSub = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
          return true;
@@ -45,7 +45,7 @@ class ControladorInscSubasta extends ControladorBase
          $sql = "SELECT * FROM InscSubasta;";
       }else{
       $parametros = array($id);
-         $sql = "SELECT * FROM InscSubasta WHERE id = ?;";
+         $sql = "SELECT * FROM InscSubasta WHERE idInscSub = ?;";
       }
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       return $respuesta;
