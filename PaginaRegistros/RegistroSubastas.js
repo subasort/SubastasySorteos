@@ -7,7 +7,7 @@ function limpiar() {
     urltorequest = urlWS + "InscSubasta/leer";
     document.getElementById("idInscSub").value = "";
     document.getElementById("idSubasta").value = "";
-    document.getElementById("ciUsuario").value = "";
+    document.getElementById("idUsuario").value = "";
    
     
 function leerfiltrado() {
@@ -24,7 +24,7 @@ function leerfiltrado() {
             pieTabla = "</tbody></table>";
             contenidoTabla = "";
             $(toshow).each(function (key, value) {
-                contenidoTabla = contenidoTabla + "<tr><td>" + value.idInscSub + "</td><td>" + value.idSubasta + "</td><td>" + value.ciUsuario + "</td></tr>";
+                contenidoTabla = contenidoTabla + "<tr><td>" + value.idInscSub + "</td><td>" + value.idSubasta + "</td><td>" + value.idUsuario + "</td></tr>";
             });
             document.getElementById("respuesta").innerHTML = cabeceraTabla + contenidoTabla + pieTabla;
         }
@@ -33,14 +33,14 @@ function leerfiltrado() {
 function crear() {
     idInscSub = document.getElementById("idInscSub").value;
     idSubasta = document.getElementById("idSubasta").value;
-    ciUsuario = document.getElementById("ciUsuario").value;
+    ciUsuario = document.getElementById("idUsuario").value;
    
     urltorequest = urlWS + "InscSubasta/crear";
     $.ajax({
         type: "post",
         url: urltorequest,
         data: JSON.stringify({
-            idInscSub: idInscSub, idSubasta :idSubasta, ciUsuario: ciUsuario
+            idInscSub: idInscSub, idSubasta :idSubasta, idUsuario: idUsuario
         }),
         async: true,
         success: function (respuesta) {
@@ -58,7 +58,8 @@ function crear() {
 function leer() {
     idInscSub = document.getElementById("idInscSub").value;
     idSubasta = document.getElementById("idSubasta").value;
-    ciUsuario = document.getElementById("ciUsuario").value;
+    ciUsuario = document.getElementById("idUsuario").value;
+  
     urltorequest = urlWS + "InscSubasta/leer";
     $.ajax({
         type: "get",
@@ -66,11 +67,11 @@ function leer() {
         async: false,
         success: function (respuesta) {
             toshow = JSON.parse(respuesta);
-            cabeceraTabla = "<table class=\"table table-condensed\"><thead><tr><th>ids de inscripcion</th><th>Numero para sortear</th><th>céduda</th></tr></thead><tbody>";
+            cabeceraTabla = "<table class=\"table table-condensed\"><thead><tr><th>ids de inscripcion</th><th>Numero para sortear</th><th>id usuario</th></tr></thead><tbody>";
             pieTabla = "</tbody></table>";
             contenidoTabla = "";
             $(toshow).each(function (key, value) {
-                contenidoTabla = contenidoTabla + "<tr><td>" + value.idInscSub + "</td><td>" + value.idSubasta + "</td><td>" + value.ciUsuario+ "</td></tr>";
+                contenidoTabla = contenidoTabla + "<tr><td>" + value.idInscSub + "</td><td>" + value.idSubasta + "</td><td>" + value.idUsuario+ "</td></tr>";
             });
             document.getElementById("respuesta").innerHTML = cabeceraTabla + contenidoTabla + pieTabla;
         }
@@ -82,7 +83,8 @@ function leer() {
 function borrar() {
     idInscSub = document.getElementById("idInscSub").value;
     idSubasta = document.getElementById("idSubasta").value;
-    ciUsuario = document.getElementById("ciUsuario").value;
+    ciUsuario = document.getElementById("idUsuario").value;
+    
     
     urltorequest = urlWS + "InscSubasta/borrar?id=" + idInscSub;
     $.ajax({
@@ -105,13 +107,13 @@ function borrar() {
 function actualizar() {
     idInscSub = document.getElementById("idInscSub").value;
     idSubasta = document.getElementById("idSubasta").value;
-    ciUsuario = document.getElementById("ciUsuario").value;
+    ciUsuario = document.getElementById("idUsuario").value;
     urltorequest = urlWS + "InscSubasta/actualizar";
     $.ajax({
         type: "post",
         url: urltorequest,
         data: JSON.stringify({
-            idInscSub: idInscSub, idSubasta: idSubasta, ciUsuario: ciUsuario
+            idInscSub: idInscSub, idSubasta: idSubasta, idUsuario: idUsuario
            
         }),
         async: false,

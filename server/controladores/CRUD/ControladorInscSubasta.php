@@ -17,7 +17,7 @@ class ControladorInscSubasta extends ControladorBase
 
    function actualizar(InscSubasta $inscsubasta)
    {
-      $parametros = array($inscsubasta->idInscSub,$inscsubasta->idSubasta,$inscsubasta->idUsuario,$inscsubasta->id);
+      $parametros = array($inscsubasta->idInscSub,$inscsubasta->idSubasta,$inscsubasta->idUsuario,$inscsubasta->idInscSub);
       $sql = "UPDATE InscSubasta SET idInscSub = ?,idSubasta = ?,idUsuario = ? WHERE idInscSub = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
