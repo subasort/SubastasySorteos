@@ -19,114 +19,114 @@
 </head>
 
 <body>
-        <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">
-                            <img src="subasort.png" width="110">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="subasort.png" width="110">
+                </a>
+
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="../PaginaPrincipal/Paginaprincipal.html">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Registros
+                            <span class="caret"></span>
                         </a>
-        
-                    </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href="../PaginaPrincipal/Paginaprincipal.html">Home</a>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Registros
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="../PaginaRegistros/RegistroSorteos.html">sorteos</a>
-                                    </li>
-                                    <li>
-                                        <a href="../PaginaRegistros/RegistroSubastas.html">subastas</a>
-                                    </li>
-                                    <li>
-                                        <a href="../PaginaPrincipal/contactar.html">contactos</a>
-                                    </li>
-                                </ul>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../PaginaRegistros/RegistroSorteos.html">sorteos</a>
                             </li>
                             <li>
-                                <a href="#">Subastar</a>
+                                <a href="../PaginaRegistros/RegistroSubastas.html">subastas</a>
                             </li>
                             <li>
-                                <a href="#">sortear</a>
+                                <a href="../PaginaPrincipal/contactar.html">contactos</a>
                             </li>
                         </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="#">
-                                    <span class="glyphicon glyphicon-user"></span> Sign Up</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="glyphicon glyphicon-log-in"></span> Login</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        
-        <div class="container-fluid-12">
+                    </li>
+                    <li>
+                        <a href="#">Subastar</a>
+                    </li>
+                    <li>
+                        <a href="#">sortear</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="text-center text-primary">
-                        PARTICIPA EN ESTA SUBASTA!
-                    </h3>
+    <div class="container-fluid-12">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center text-primary">
+                    PARTICIPA EN ESTA SUBASTA!
+                </h3>
+            </div>
+        </div>
+        </br>
+        </br>
+        <div class="row">
+            <div class="col-md-5 col-md-offset-4">
+
+                <div class="btn-group- btn-group-sm">
+                    <button type="button" class="btn btn-info" onclick="leer()">
+                        <span class="glyphicon glyphicon-refresh"></span>&nbsp;Registro-Sorteos
+                    </button>
+                    <button type="button" class="btn btn-success" onclick="crear()">
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp;CREAR
+                    </button>
+                    <button type="button" class="btn btn-warning" onclick="actualizar()">
+                        <span class="glyphicon glyphicon-ok"></span>&nbsp;ACTUALIZAR
+                    </button>
+                    <button type="button" class="btn btn-danger" onclick="borrar()">
+                        <span class="glyphicon glyphicon-trash"></span>&nbsp;BORRAR
+                    </button>
                 </div>
             </div>
-            </br>
-            </br>
-            <div class="row">
-                <div class="col-md-5 col-md-offset-4">
+        </div>
 
-                    <div class="btn-group- btn-group-sm">
-                        <button type="button" class="btn btn-info" onclick="leer()">
-                            <span class="glyphicon glyphicon-refresh"></span>&nbsp;Registro-Sorteos
-                        </button>
-                        <button type="button" class="btn btn-success" onclick="crear()">
-                            <span class="glyphicon glyphicon-plus"></span>&nbsp;CREAR
-                        </button>
-                        <button type="button" class="btn btn-warning" onclick="actualizar()">
-                            <span class="glyphicon glyphicon-ok"></span>&nbsp;ACTUALIZAR
-                        </button>
-                        <button type="button" class="btn btn-danger" onclick="borrar()">
-                            <span class="glyphicon glyphicon-trash"></span>&nbsp;BORRAR
-                        </button>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
             </div>
-
-            <div class="row">
-                <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
+            <div class="col-xs-10 col-sm-10 col-md-6 col-lg-6">
+                <div class="form-group">
+                    <label>idInscSubasta</label>
+                    <input type="text" class="form-control" id="idUsuario" placeholder="">
                 </div>
-                <div class="col-xs-10 col-sm-10 col-md-6 col-lg-6">
-                    <div class="form-group">
-                        <label>idInscSubasta</label>
-                        <input type="text" class="form-control" id="idUsuario" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label>idSorteo</label>
-                        <input type="text" class="form-control" id="nombreUsuario" placeholder="idsorteo">
-                    </div>
-                    <div class="form-group">
-                        <label>ciUsuario</label>
-                        <input type="text" class="form-control" id="ciUsuario" placeholder="CI para ingresar al sorteo">
-                    </div>
-
-
-
+                <div class="form-group">
+                    <label>idSorteo</label>
+                    <input type="text" class="form-control" id="nombreUsuario" placeholder="idsorteo">
                 </div>
-                <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label>ciUsuario</label>
+                    <input type="text" class="form-control" id="ciUsuario" placeholder="CI para ingresar al sorteo">
                 </div>
+
+
+
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
+
             </div>
             <div class="row">
                 <div class="col-md-12">
