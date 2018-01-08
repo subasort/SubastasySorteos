@@ -4,94 +4,138 @@
 <head>
     <meta charset="utf-8" />
     <meta name="christian" content="SUBASTAS Y SORTEOS">
-    <title>CRUD REGISTRO</title>
+    <title>REGISTRO SORTEO</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="RegistroUsuarios.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
-        crossorigin="anonymous">
+    <script src="../PaginaRegistros/RegistroUsuarios.js"></script>.
     <style>
-       body  {
-        /* background-image: url("https://i0.wp.com/criptotendencia.com/wp-content/uploads/2017/09/Subastas-Online.jpg?fit=618%2C426&ssl=1"); */
-        background-color: #292929;
-        /*background-image: url("sorteo.png");*/
-    }
+        body {
+            /* background-image: url("https://i0.wp.com/criptotendencia.com/wp-content/uploads/2017/09/Subastas-Online.jpg?fit=618%2C426&ssl=1"); */
+            background-color: #292929;
+            /*background-image: url("sorteo.png");*/
+        }
     </style>
 </head>
 
 <body>
-    <picture>
-        <source media="(min-width: )" srcset="subasort.png">
-        <img src="subasort.png" width="200">
-    </picture>
-    <div class="container-fluid-12">
 
-        <div class="row">
-            <div class="col-md-11">
-                <h3 class="text-center text-primary">
-                    INSCRIBITE ALGUN SORTEO !
-                </h3>
-            </div>
-        </div>
-        </br>
-        </br>
-        <div class="row">
-            <div class="col-md-5 col-md-offset-4">
-
-                <div class="btn-group- btn-group-sm">
-                    <button type="button" class="btn btn-info" onclick="leer()">
-                        <span class="glyphicon glyphicon-refresh"></span>&nbsp;Registro-Sorteos
-                    </button>
-                    <button type="button" class="btn btn-success" onclick="crear()">
-                        <span class="glyphicon glyphicon-plus"></span>&nbsp;CREAR
-                    </button>
-                    <button type="button" class="btn btn-warning" onclick="actualizar()">
-                        <span class="glyphicon glyphicon-ok"></span>&nbsp;ACTUALIZAR
-                    </button>
-                    <button type="button" class="btn btn-danger" onclick="borrar()">
-                        <span class="glyphicon glyphicon-trash"></span>&nbsp;BORRAR
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
-            </div>
-            <div class="col-xs-10 col-sm-10 col-md-6 col-lg-6">
-                <div class="form-group">
-                    <label>idInscSorteo</label>
-                    <input type="text" class="form-control" id="idUsuario" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label>idSorteo</label>
-                    <input type="text" class="form-control" id="nombreUsuario" placeholder="Nombre">
-                </div>
-                <div class="form-group">
-                    <label>ciUsuario</label>
-                    <input type="text" class="form-control" id="ciUsuario" placeholder="CI para ingresar al sorteo">
-                </div>
-                
-            
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="subasort.png" width="110">
+                </a>
 
             </div>
-            <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="../PaginaPrincipal/Paginaprincipal.html">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Registros
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../PaginaRegistros/RegistroSorteos.html">sorteos</a>
+                            </li>
+                            <li>
+                                <a href="../PaginaRegistros/RegistroSubastas.html">subastas</a>
+                            </li>
+                            <li>
+                                <a href="../PaginaPrincipal/contactar.html">contactos</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Subastar</a>
+                    </li>
+                    <li>
+                        <a href="#">sortear</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="respuesta">
-                    lista de registrados
-                </div>
+    </nav>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center text-primary">
+                INSCRIBITE A ESTE SORTEO !
+            </h3>
+        </div>
+    </div>
+    </br>
+    </br>
+    <div class="row">
+        <div class="col-md-5 col-md-offset-4">
+
+            <div class="btn-group- btn-group-sm">
+                <button type="button" class="btn btn-info" onclick="leer()">
+                    <span class="glyphicon glyphicon-refresh"></span>&nbsp;Registro-Sorteos
+                </button>
+                <button type="button" class="btn btn-success" onclick="crear()">
+                    <span class="glyphicon glyphicon-plus"></span>&nbsp;CREAR
+                </button>
+                <button type="button" class="btn btn-warning" onclick="actualizar()">
+                    <span class="glyphicon glyphicon-ok"></span>&nbsp;ACTUALIZAR
+                </button>
+                <button type="button" class="btn btn-danger" onclick="borrar()">
+                    <span class="glyphicon glyphicon-trash"></span>&nbsp;BORRAR
+                </button>
             </div>
         </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
+        </div>
+        <div class="col-xs-10 col-sm-10 col-md-6 col-lg-6">
+            <div class="form-group">
+                <label>idInscSorteo</label>
+                <input type="text" class="form-control" id="idUsuario" placeholder="Numero para sortear">
+            </div>
+            <div class="form-group">
+                <label>idSorteo</label>
+                <input type="text" class="form-control" id="nombreUsuario" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <label>ciUsuario</label>
+                <input type="text" class="form-control" id="ciUsuario" placeholder="Identificador">
+            </div>
+
+
+
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="respuesta">
+                lista de registrados
+            </div>
+        </div>
+    </div>
     </div>
 </body>
 

@@ -1,0 +1,409 @@
+<html lang="en">
+
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Subastas y Sorteos</title>
+  <html lang="en">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      /* background-image: url("https://i0.wp.com/criptotendencia.com/wp-content/uploads/2017/09/Subastas-Online.jpg?fit=618%2C426&ssl=1"); */
+      background-color: #292929;
+      /*background-image: url("sorteo.png");*/
+    }
+  </style>
+
+  <style>
+    .container {
+      padding: 80px 120px;
+    }
+
+    .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+    }
+
+    .person:hover {
+      border-color: #131111;
+    }
+
+    .carousel-inner img {
+      -webkit-filter: grayscale(90%);
+      filter: grayscale(0%);
+      /* make all photos black and white */
+      width: 75%;
+      /* Set width to 100% */
+      margin: auto;
+    }
+
+    .carousel-caption h3 {
+      color: #fff !important;
+    }
+
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none;
+        /* Hide the carousel text when the screen is less than 600 pixels wide */
+      }
+    }
+
+    .bg-1 {
+      background: #262627;
+      color: #bdbdbd;
+    }
+
+    .bg-1 h3 {
+      color: #fff;
+    }
+
+    .bg-1 p {
+      font-style: italic;
+    }
+
+    .list-group-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    .list-group-item:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+    }
+
+    .thumbnail p {
+      margin-top: 15px;
+      color: #555;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .modal-header,
+    h4,
+    .close {
+      background-color: #333;
+      color: rgb(241, 233, 233) !important;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .modal-header,
+    .modal-body {
+      padding: 40px 50px;
+    }
+
+    .nav-tabs li a {
+      color: rgb(36, 36, 36);
+    }
+
+    #googleMap {
+      width: 100%;
+      height: 400px;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+
+    .navbar {
+      margin-bottom: 0;
+      background-color: #080808;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+      opacity: 0.9;
+    }
+
+    .navbar li a,
+    .navbar .navbar-brand {
+      color: rgb(255, 250, 250) !important;
+    }
+
+    .navbar-nav li a:hover {
+      color: rgb(32, 30, 30) !important;
+    }
+
+    .navbar-nav li.active a {
+      color: rgb(8, 7, 7) !important;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <picture>
+            <source media="(min-width: )" srcset="subasort.png">
+            <img src="subasort.png" width="110">
+          </picture>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">HOME</a>
+          </li>
+          <li>
+            <a href="#">SUBASTAR</a>
+          </li>
+          <li>
+            <a href="#">SORTEAR</a>
+          </li>
+          <li>
+            <a href="contactar.html">CONTACT</a>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">REGISTROS
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="../PaginaRegistros/RegistroUsuario.html">Usuarios</a>
+              </li>
+              <li>
+                <a href="../PaginaRegistros/RegistroSubastas.html">Subastas</a>
+              </li>
+              <li>
+                <a href="../PaginaRegistros/RegistroSorteos.html">Sorteos</a>
+              </li>
+
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="glyphicon glyphicon-log-in"></span>Login</a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="glyphicon glyphicon-search"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="este.png" alt="SUBASORT" width="700" height="500">
+        <div class="carousel-caption">
+          <h3>SUBASORT</h3>
+          <p>PODRAS SUBASTAR Y SORTEAR PRONTO!</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="sorteo.png" alt="SORTEOS" width="700" height="500">
+        <div class="carousel-caption">
+          <h3>sorteos</h3>
+          <p>sortea lo que imaginas</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Subasta.png" alt="SUBASTAS" width="700" height="500">
+        <div class="carousel-caption">
+          <h3>subastas</h3>
+          <p>subasta todo lo que quieras.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+
+  </div>
+
+
+  <h3 class="text-center">Subastas de la semana</h3>
+  <p class="text-center">Lorem ipsum we'll play you some music.
+    <br> Remember to book your tickets!</p>
+  <center>
+    <div class="row text-center">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="data:image/jpeg;base64,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"
+            alt="Paris">
+          <p>
+            <strong>
+              LAPTOP MARCA COMPAQ</strong>
+          </p>
+          <p>SUBASTA</p>
+          <input type="submit" value="PARTICIPAR" class="btn btn-success" onclick="location='../PaginaRegistros/RegistroSorteos.html'"
+          />
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="http://westerndigs.org/wp-content/uploads/2013/05/Atari-2600-Console.jpg" alt="New York">
+          <p>
+            <strong>VIDEO COMPUTER SYSTEM</strong>
+          </p>
+          <p>SUBASTA</p>
+          <input type="submit" value="PARTICIPAR" class="btn btn-success" onclick="location='../PaginaRegistros/RegistroSorteos.html'"
+          />
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="http://www.smallbiztechnology.com/wp-content/uploads/2012/12/telephone-rotary-300x200.jpg" alt="San Francisco">
+          <p>
+            <strong>San Francisco</strong>
+          </p>
+          <p>SUBASTA</p>
+          <input type="submit" value="PARTICIPAR" class="btn btn-success" onclick="location='../PaginaRegistros/RegistroSorteos.html'"
+          />
+        </div>
+      </div>
+    </div>
+    <a href="https://www.facebook.com/" target="_blank">
+      <img alt="siguenos en facebook" height="48" src="http://4.bp.blogspot.com/-LnKbkk802kw/UiXwV9rN8xI/AAAAAAAAB0Y/fQCQKFEbvjM/s1600/face.png"
+        title="siguenos en facebook" width="48" />
+    </a>
+    <a href="https://www.google.es/" target="_blank">
+      <img alt="siguenos en Google+" height="48" src="http://3.bp.blogspot.com/-IwxItZ1_cM0/UiX0-g2DrCI/AAAAAAAAB1c/hOSA6Uklo-I/s1600/Google%252B+alt.png"
+        title="siguenos en Google+" width="48" />
+    </a>
+    <a href="https://twitter.com/twitter?lang=es" target="_blank">
+      <img alt="siguenos en Twitter" height="48" src="http://2.bp.blogspot.com/-CaF1EOBAWj4/UiX1AxmkZuI/AAAAAAAAB2Y/IioIplosXNo/s1600/Twitter+NEW.png"
+        title="siguenos en Twitter" width="48" />
+    </a>
+    <a href="https://www.youtube.com/" target="_blank">
+      <img alt="Canal de youtube" height="48" src="http://4.bp.blogspot.com/-wJkQKYTRnLE/UiX1C4zSnRI/AAAAAAAAB3Q/itwpDSplxdo/s1600/YouTube+alt+1.png"
+        title="Canal de youtube" width="48" />
+    </a>
+    <a href="https://www.instagram.com/" target="_blank">
+      <img alt="sígueme en Instagram" height="48" src="http://2.bp.blogspot.com/-6o2p2ehwMU4/UidPFSMM0vI/AAAAAAAAB_w/0v1pGNm_Dyg/s1600/instagram2.png"
+        title="sígueme en Instagram" width="48" />
+    </a>
+
+  </center>
+  <style>
+    /* Add a dark background color to the footer */
+
+    footer {
+      background-color: #2d2d30;
+      color: #f5f5f5;
+      padding: 32px;
+    }
+
+    footer a {
+      color: #f5f5f5;
+    }
+
+    footer a:hover {
+      color: #777;
+      text-decoration: none;
+    }
+  </style>
+
+  <footer class="text-center">
+    <a class="up-arrow" href="../PaginaPrincipal/Paginaprincipal.html" data-toggle="tooltip" title="Regargar">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    <br>
+    <br>
+    <p>¡Para Subastas o Sorteos registrate!
+      <a href="../PaginaRegistros/RegistroUsuario.html" data-toggle="tooltip" title="Visit w3schools">www.registrosubasort.com</a>
+    </p>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      // Initialize Tooltip
+      $('[data-toggle="tooltip"]').tooltip();
+    })
+  </script>
+
+  <script>
+
+
+    $(document).ready(function () {
+      // Initialize Tooltip
+      $('[data-toggle="tooltip"]').tooltip();
+
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (500) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 500, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    })
+
+
+  </script>
+
+
+</body>
+
+</html>
