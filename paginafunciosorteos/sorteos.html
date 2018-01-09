@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="sorteo.js"></script>
     <style>
-            body  {
-             /* background-image: url("https://i0.wp.com/criptotendencia.com/wp-content/uploads/2017/09/Subastas-Online.jpg?fit=618%2C426&ssl=1"); */
-             background-color: #414040;
-             /*background-image: url("sorteo.png");*/
-         }
-         </style>
+        body {
+            /* background-image: url("https://i0.wp.com/criptotendencia.com/wp-content/uploads/2017/09/Subastas-Online.jpg?fit=618%2C426&ssl=1"); */
+            background-color: #ffffff;
+            background-image: url("https://www.baloto.com/storage/app/media/tab-img-3-120170410091017.png");
+        }
+    </style>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img src="subasort.png" width="110">
+                    <img src="http://subasort01.byethost24.com/imagen/subasort.png" width="110">
                 </a>
 
             </div>
@@ -43,13 +44,13 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#">subastas</a>
+                                <a href="http://subasort01.byethost24.com/REGISTROS/RegistroSubastas.html">subastas</a>
                             </li>
                             <li>
-                                <a href="#">sorteos</a>
+                                <a href="http://subasort01.byethost24.com/REGISTROS/RegistroSorteos.html">sorteos</a>
                             </li>
                             <li>
-                                <a href="#">contactos</a>
+                                <a href="http://subasort01.byethost24.com/REGISTROS/contactar.html">contactos</a>
                             </li>
                         </ul>
                     </li>
@@ -73,22 +74,44 @@
             </div>
         </div>
     </nav>
+    </br>
+    </br>
+    </br>
 
     <div class="container">
-            <h1>BIENVENIDO AQUI PODRAS SUBASTAR IDGRESA </h1>
-            <p>This is some text.</p> 
-       
-            </div>
-            <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
-            </div>
+        <div class="col-12">
+            <center>
+                <h1>BIENVENIDO AQUI PODRAS SORTEAR </h1>
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="btn-group- btn-group-sm">
+                            <button type="button" class="btn btn-success" onclick="leer_ganador()">
+                                <span class="glyphicon glyphicon-refresh"></span>&nbsp;SORTEAR Y MOSTRAR GANADOR
+                            </button>
+                            <button type="button" class="btn btn-info" onclick="leer()">
+                                <span class="glyphicon glyphicon-refresh"></span>&nbsp;MOSTRAR PARTICIPANTES
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+            </center>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="respuesta">
-                    lista de registrados
+        <center>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="respuesta">
+                        lista de registrados
+                    </div>
                 </div>
             </div>
-        </div>
+        </center>
+
+
+    </div>
+
 </body>
 
 </html>
