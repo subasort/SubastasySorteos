@@ -18,7 +18,7 @@ class ControladorProducto extends ControladorBase
    function actualizar(Producto $producto)
    {
       $parametros = array($producto->idProducto,$producto->nomProducto,$producto->descProducto,$producto->precioCompra,$producto->id);
-      $sql = "UPDATE Producto SET idProducto = ?,nomProducto = ?,descProducto = ?,precioCompra = ? WHERE id = ?;";
+      $sql = "UPDATE Producto SET idProducto = ?,nomProducto = ?,descProducto = ?,precioCompra = ? WHERE idProducto = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
          return true;
@@ -30,7 +30,7 @@ class ControladorProducto extends ControladorBase
    function borrar(int $id)
    {
       $parametros = array($id);
-      $sql = "DELETE FROM Producto WHERE id = ?;";
+      $sql = "DELETE FROM Producto WHERE idProducto = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
          return true;
@@ -45,7 +45,7 @@ class ControladorProducto extends ControladorBase
          $sql = "SELECT * FROM Producto;";
       }else{
       $parametros = array($id);
-         $sql = "SELECT * FROM Producto WHERE id = ?;";
+         $sql = "SELECT * FROM Producto WHERE idProducto = ?;";
       }
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       return $respuesta;

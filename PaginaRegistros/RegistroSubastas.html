@@ -2,85 +2,102 @@
 <html lang="en">
 
 <head>
-    <title>REGISTRO USUARIO</title>
+    <title>subastas</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    
+
     <script src="RegistroSubastas.js"></script>
     <style>
         body {
             /* background-image: url("https://i0.wp.com/criptotendencia.com/wp-content/uploads/2017/09/Subastas-Online.jpg?fit=618%2C426&ssl=1"); */
-            background-color: #414040;
+            background-color: #242424;
             /*background-image: url("sorteo.png");*/
+        }
+    </style>
+    <style>
+        nav {
+            background-color: rgb(3, 3, 3)
         }
     </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img src="subasort.png" width="110">
-                </a>
-
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="../PaginaPrincipal/Paginaprincipal.html">Home</a>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Registros
-                            <span class="caret"></span>
+        <nav class="navbar navbar-inverse navba-rblack">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand active"  href="#">
+                            <img src="subasort.png" width="110">
                         </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="../PaginaRegistros/RegistroSorteos.html">sorteos</a>
+        
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href="../PaginaPrincipal/Paginaprincipal.html"><span class="glyphicon glyphicon-home"></span>  Home</a>
                             </li>
-                            <li>
-                                <a href="../PaginaRegistros/RegistroSubastas.html">subastas</a>
+                            <li class="dropdown active">
+                                <a class="dropdown-toggle " data-toggle="dropdown" href="#">Registros
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="../PaginaRegistros/RegistroSorteos.html">sorteos</a>
+                                    </li class="active">
+                                    <li>
+                                        <a href="../PaginaRegistros/RegistroSubastas.html">subastas</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="../PaginaPrincipal/contactar.html">contactos</a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li>
-                                <a href="../PaginaPrincipal/contactar.html">contactos</a>
+                            <li class="active">
+                                <a href="#">Subastar</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">sortear</a>
                             </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="#">Subastar</a>
-                    </li>
-                    <li>
-                        <a href="#">sortear</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#">
-                            <span class="glyphicon glyphicon-user"></span> Sign Up</a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="glyphicon glyphicon-log-in"></span> Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+                        
+                        <form class="navbar-form navbar-left" action="/action_page.php">
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="buscar" name="buscar">
+                            </div>
+                            <button type="submit" class="btn btn-success"><span class="	glyphicon glyphicon-search"></span> buscar</button>
+                          </form>
+                          
+                        
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active">
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        
     <div class="container">
 
         <div class="row">
             <div class="col-md-12">
-                <h3 class="text-center text-primary">
-                    INSCRIBETE A ESTA SUBASTA
+                <h3 class="text-center text-muted">
+                    <dt>INSCRIBETE A ESTA SUBASTA</dt>
                 </h3>
             </div>
         </div>
@@ -110,15 +127,15 @@
             <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
             </div>
             <div class="col-xs-10 col-sm-10 col-md-6 col-lg-6">
-                <div class="form-group">
+                <div class=" text-muted form-group">
                     <label>id de inscripcion</label>
                     <input type="text" class="form-control" id="idInscSub" placeholder="numero inscripcion">
                 </div>
-                <div class="form-group">
+                <div class=" text-muted form-group">
                     <label>id de subasta</label>
                     <input type="text" class="form-control" id="IdSubasta" placeholder="numero subasta">
                 </div>
-                <div class="form-group">
+                <div class="text-muted form-group">
                     <label>id de usuario</label>
                     <input type="text" class="form-control" id="idUsuario" placeholder="numero usuario">
                 </div>
@@ -128,8 +145,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div id="respuesta">
+            <div class="text-muted col-md-4 col-md-offset-4">
+                <div id=" text-muted respuesta">
                     lista de registrados
                 </div>
             </div>

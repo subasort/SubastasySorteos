@@ -17,8 +17,8 @@ class ControladorCuenta extends ControladorBase
 
    function actualizar(Cuenta $cuenta)
    {
-      $parametros = array($cuenta->idCuenta,$cuenta->idUsuario,$cuenta->contrasena,$cuenta->idTipoCuenta,$cuenta->id);
-      $sql = "UPDATE Cuenta SET idCuenta = ?,idUsuario = ?,contrasena = ?,idTipoCuenta = ? WHERE id = ?;";
+      $parametros = array($cuenta->idCuenta,$cuenta->idUsuario,$cuenta->contrasena,$cuenta->idTipoCuenta,$cuenta->idCuenta);
+      $sql = "UPDATE Cuenta SET idCuenta = ?,idUsuario = ?,contrasena = ?,idTipoCuenta = ? WHERE idCuenta = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
          return true;
@@ -30,7 +30,7 @@ class ControladorCuenta extends ControladorBase
    function borrar(int $id)
    {
       $parametros = array($id);
-      $sql = "DELETE FROM Cuenta WHERE id = ?;";
+      $sql = "DELETE FROM Cuenta WHERE idCuenta = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
          return true;
@@ -45,7 +45,7 @@ class ControladorCuenta extends ControladorBase
          $sql = "SELECT * FROM Cuenta;";
       }else{
       $parametros = array($id);
-         $sql = "SELECT * FROM Cuenta WHERE id = ?;";
+         $sql = "SELECT * FROM Cuenta WHERE idCuenta = ?;";
       }
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       return $respuesta;

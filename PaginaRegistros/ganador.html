@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>ganador </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="RegistroUsuarios.js"></script>
+    <style>
+        body {
+             background-image: url("https://photofiles.alphacoders.com/221/22181.jpg"); 
+            background-color: #242424;
+            /*background-image: url("sorteo.png");*/
+        }
+    </style>
+    <style>
+        navbar {
+            background-color: rgb(0, 0, 0)
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse " "active">
+        <div class="container-fluid" "active">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar" "active"></span>
+                    <span class="icon-bar" "active"></span>
+                    <span class="icon-bar" "active"></span>
+                </button>
+                <a class="" href="#">
+
+                    <img class="active" src="subasort.png" width="151">
+
+                </a>
+
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="../PaginaPrincipal/Paginaprincipal.html">
+                            <span class="glyphicon glyphicon-home"></span> Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a class="dropdown-toggle " data-toggle="dropdown" href="#">Registros
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../PaginaRegistros/RegistroSorteos.html">sorteos</a>
+                            </li class="active">
+                            <li>
+                                <a href="../PaginaRegistros/RegistroSubastas.html">subastas</a>
+                            </li>
+                            <li class="active">
+                                <a href="../PaginaPrincipal/contactar.html">contactos</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#">Subastar</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">sortear</a>
+                    </li>
+                </ul>
+
+                <form class="navbar-form navbar-left" action="/action_page.php">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="buscar" name="buscar">
+                    </div>
+                    <button type="submit" class="btn btn-success">
+                        <span class="	glyphicon glyphicon-search"></span> buscar</button>
+                </form>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center text-muted">
+                    <dt>INSCRIBETE A ESTA SUBASTA</dt>
+                </h3>
+            </div>
+        </div>
+        </br>
+        </br>
+
+        <body>
+
+            <h2 class="text-center text-muted">Bienvenido a Sorteo </h2>
+
+            <p class="text-center text-muted">Primero presiona <kbd>Mirar participantes</kbd>y despues dale a sortear.</p>
+            <div class="row">
+                <div class="col-12  text-center">
+
+                    <button type="button" class="btn btn-info" onclick="sortear()">
+                        <span class="glyphicon glyphicon-refresh"></span>&nbsp;Sortear Ahora
+                    </button>
+                    <button type="button" class="btn btn-info" onclick="leer()">
+                        <span class="glyphicon glyphicon-refresh"></span>&nbsp;Mirar participantes
+                    </button>
+                    <br/>
+                    <br/>
+                    <dt class="text-muted">EL GANADOR ES AHORA</dt>
+                    <h3 class="text-muted "=id="text-danger nameSelected"></h3>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-muted text-center col-12">
+                    <div id="nameSelected">
+                        lista de registrados
+                    </div>
+                </div>
+            </div>
+
+
+            <script>
+                function sortear() {
+                    var $db_names = ["Christian", "Carlos Manuel", "luis", "Daniel", "jhon", "Bryan","javier","maria","rebeca","Lucas","sebastian","roger"],
+                        random = (max, min, inclusive) => inclusive === true ?
+                            Math.floor(Math.random() * (max - min + 1) + min) :
+                            Math.floor(Math.random() * (max - min) + min),
+
+                        nameSelected = $db_names[random($db_names.length, 0, "false")];
+
+
+
+                    console.log(nameSelected);
+                    document.getElementById("nameSelected").innerHTML = nameSelected;
+                    alert("el ganador es:" + nameSelected + ".");
+
+
+                }
+
+
+
+
+
+
+
+
+            </script>
+
+        </body>
+
+</html>

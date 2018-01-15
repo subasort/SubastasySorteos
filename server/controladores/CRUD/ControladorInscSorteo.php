@@ -17,8 +17,8 @@ class ControladorInscSorteo extends ControladorBase
 
    function actualizar(InscSorteo $inscsorteo)
    {
-      $parametros = array($inscsorteo->idInscSorteo,$inscsorteo->idSorteo,$inscsorteo->idUsuario,$inscsorteo->id);
-      $sql = "UPDATE InscSorteo SET idInscSorteo = ?,idSorteo = ?,idUsuario = ? WHERE id = ?;";
+      $parametros = array($inscsorteo->idInscSorteo,$inscsorteo->idSorteo,$inscsorteo->idUsuario,$inscsorteo->idInscSorteo);
+      $sql = "UPDATE InscSorteo SET idInscSorteo = ?,idSorteo = ?,idUsuario = ? WHERE idInscSorteo = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
          return true;
@@ -30,7 +30,7 @@ class ControladorInscSorteo extends ControladorBase
    function borrar(int $id)
    {
       $parametros = array($id);
-      $sql = "DELETE FROM InscSorteo WHERE id = ?;";
+      $sql = "DELETE FROM InscSorteo WHERE idInscSorteo = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
          return true;
@@ -45,7 +45,7 @@ class ControladorInscSorteo extends ControladorBase
          $sql = "SELECT * FROM InscSorteo;";
       }else{
       $parametros = array($id);
-         $sql = "SELECT * FROM InscSorteo WHERE id = ?;";
+         $sql = "SELECT * FROM InscSorteo WHERE idInscSorteo = ?;";
       }
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       return $respuesta;

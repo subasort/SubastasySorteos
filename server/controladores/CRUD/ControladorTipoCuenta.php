@@ -17,8 +17,8 @@ class ControladorTipoCuenta extends ControladorBase
 
    function actualizar(TipoCuenta $tipocuenta)
    {
-      $parametros = array($tipocuenta->idTipoCuenta,$tipocuenta->descripcion,$tipocuenta->id);
-      $sql = "UPDATE TipoCuenta SET idTipoCuenta = ?,descripcion = ? WHERE id = ?;";
+      $parametros = array($tipocuenta->idTipoCuenta,$tipocuenta->descripcion,$tipocuenta->idTipoCuenta);
+      $sql = "UPDATE TipoCuenta SET idTipoCuenta = ?,descripcion = ? WHERE idTipoCuenta = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
          return true;
@@ -30,7 +30,7 @@ class ControladorTipoCuenta extends ControladorBase
    function borrar(int $id)
    {
       $parametros = array($id);
-      $sql = "DELETE FROM TipoCuenta WHERE id = ?;";
+      $sql = "DELETE FROM TipoCuenta WHERE idTipoCuenta = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
          return true;
@@ -45,7 +45,7 @@ class ControladorTipoCuenta extends ControladorBase
          $sql = "SELECT * FROM TipoCuenta;";
       }else{
       $parametros = array($id);
-         $sql = "SELECT * FROM TipoCuenta WHERE id = ?;";
+         $sql = "SELECT * FROM TipoCuenta WHERE idTipoCuenta = ?;";
       }
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       return $respuesta;

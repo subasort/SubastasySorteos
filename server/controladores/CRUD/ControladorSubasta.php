@@ -17,8 +17,8 @@ class ControladorSubasta extends ControladorBase
 
    function actualizar(Subasta $subasta)
    {
-      $parametros = array($subasta->idSubasta,$subasta->idProdSubasta,$subasta->idGanaSubasta,$subasta->fechaSubasta,$subasta->montoMinimo,$subasta->id);
-      $sql = "UPDATE Subasta SET idSubasta = ?,idProdSubasta = ?,idGanaSubasta = ?,fechaSubasta = ?,montoMinimo = ? WHERE id = ?;";
+      $parametros = array($subasta->idSubasta,$subasta->idProdSubasta,$subasta->idGanaSubasta,$subasta->fechaSubasta,$subasta->montoMinimo,$subasta->idSubasta);
+      $sql = "UPDATE Subasta SET idSubasta = ?,idProdSubasta = ?,idGanaSubasta = ?,fechaSubasta = ?,montoMinimo = ? WHERE idSubasta = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
          return true;
@@ -30,7 +30,7 @@ class ControladorSubasta extends ControladorBase
    function borrar(int $id)
    {
       $parametros = array($id);
-      $sql = "DELETE FROM Subasta WHERE id = ?;";
+      $sql = "DELETE FROM Subasta WHERE idSubasta = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
          return true;
@@ -45,7 +45,7 @@ class ControladorSubasta extends ControladorBase
          $sql = "SELECT * FROM Subasta;";
       }else{
       $parametros = array($id);
-         $sql = "SELECT * FROM Subasta WHERE id = ?;";
+         $sql = "SELECT * FROM Subasta WHERE idSubasta = ?;";
       }
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       return $respuesta;
