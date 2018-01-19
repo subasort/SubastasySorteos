@@ -9,27 +9,8 @@ function limpiar() {
     document.getElementById("idSorteo").value = "";
     document.getElementById("idUsuario").value = "";
    
-    
-function leerfiltrado() {
-    type: "get",
-        filtro = document.getElementById("nombreUsuarioBuscar").value;
-    urltorequest = urlWS + "InscSorteo/leer_filtrado";
-    $.ajax({
-        type: "get",
-        url: urltorequest + "?columna=idSubasta&tipo_filtro=contiene&filtro=" + filtro,
-        async: true,
-        success: function (respuesta) {
-            toshow = JSON.parse(respuesta);
-            cabeceraTabla = "<table class=\"table table-condensed\"><thead><tr><th>idInscSub</th><th>idSubasta</th><th>idUsuario</th></tr></thead><tbody>";
-            pieTabla = "</tbody></table>";
-            contenidoTabla = "";
-            $(toshow).each(function (key, value) {
-                contenidoTabla = contenidoTabla + "<tr><td>" + value.idInscSorteo + "</td><td>" + value.idSorteo + "</td><td>" + value.idUsuario + "</td></tr>";
-            });
-            document.getElementById("respuesta").innerHTML = cabeceraTabla + contenidoTabla + pieTabla;
-        }
-    });
-}
+}  
+
 function crear() {
     idInscSub = document.getElementById("idInscSorteo").value;
     idSubasta = document.getElementById("idSorteo").value;
@@ -56,7 +37,6 @@ function crear() {
 }
 
 function leer() {
-   
     urltorequest = urlWS + "InscSorteo/leer";
     $.ajax({
         type: "get",
@@ -68,7 +48,7 @@ function leer() {
             pieTabla = "</tbody></table>";
             contenidoTabla = "";
             $(toshow).each(function (key, value) {
-                contenidoTabla = contenidoTabla + "<tr><td>" + value.idInscSorteo + "</td><td>" + value.idSorteo + "</td><td>" + value.idUsuario+ "</td></tr>";
+                contenidoTabla = contenidoTabla + "<tr><td>" + value.idInscSorteo + "</td><td>" + value.idSorteo + "</td><td>" + value.idUsuario + "</td></tr>";
             });
             document.getElementById("respuesta").innerHTML = cabeceraTabla + contenidoTabla + pieTabla;
         }
@@ -79,20 +59,16 @@ function leer() {
 
 function borrar() {
     idInscSub = document.getElementById("idInscSorteo").value;
-    idSubasta = document.getElementById("idSorteo").value;
-    ciUsuario = document.getElementById("idUsuario").value;
-    
-    
-    urltorequest = urlWS + "InscSorteo/borrar?id=" + idInscSosrteo;
+    urltorequest = urlWS + "InscSorteo/borrar?id=" + idInscSorteo;
     $.ajax({
         type: "get",
         url: urltorequest,
         async: false,
         success: function (respuesta) {
             if (respuesta == "false") {
-                alert("Error al borrar el registro:" + idInscSort + ".");
+                alert("Error al borrar el registro:" + idInscSorteo + ".");
             } else {
-                alert("Registro borrado:" + idInscSort + ".");
+                alert("Registro borrado:" + idInscSorteo + ".");
             }
         }
     });
@@ -102,15 +78,15 @@ function borrar() {
 }
 
 function actualizar() {
-    idInscSub = document.getElementById("idInscSort").value;
-    idSubasta = document.getElementById("idSubasta").value;
+    idInscSub = document.getElementById("idInscSorteo").value;
+    idSubasta = document.getElementById("idSorteo").value;
     ciUsuario = document.getElementById("idUsuario").value;
-    urltorequest = urlWS + "InscSubasta/actualizar";
+    urltorequest = urlWS + "InscSorteo/actualizar";
     $.ajax({
         type: "post",
         url: urltorequest,
         data: JSON.stringify({
-            idInscSub: idInscSub, idSubasta: idSubasta, idUsuario: idUsuario
+            idInscSorteo: idInscSorteo, idSorteo: idSorteo, idUsuario: idUsuario
            
         }),
         async: false,
@@ -124,5 +100,4 @@ function actualizar() {
     });
     limpiar();
     leer();
-}
 }
