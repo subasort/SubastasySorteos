@@ -17,7 +17,7 @@ class ControladorProducto extends ControladorBase
 
    function actualizar(Producto $producto)
    {
-      $parametros = array($producto->idProducto,$producto->nomProducto,$producto->descProducto,$producto->precioCompra,$producto->id);
+      $parametros = array($producto->idProducto,$producto->nomProducto,$producto->descProducto,$producto->precioCompra,$producto->idProducto );
       $sql = "UPDATE Producto SET idProducto = ?,nomProducto = ?,descProducto = ?,precioCompra = ? WHERE idProducto = ?;";
       $respuesta = $this->conexion->ejecutarConsulta($sql,$parametros);
       if(is_null($respuesta[0])){
